@@ -1,0 +1,8 @@
+# Common
+*.pyc
+*.pyo
+*.swp
+*.swo
+*.orig
+
+# Project specific

@@ -1,0 +1,43 @@
+Installation
+============
+
+To create virtual environment and install all dependencies run::
+
+    make build
+
+You can change dependencies in project/requirements.txt
+By default `make build` command creates virtual environment for python3.
+If you need python2, change Makefile.
+
+
+Usage
+=====
+
+To launch scraping process run::
+
+    run crawl <spider_name>
+
+where <spider_name> is undescored name of your spider class.
+
+Underscore name means that if spider class has name FooBarSpider then the
+command will be `run crawl foo_bar_spider`.
+
+To let `run crawl` command know where your spider class is located you
+should put the corresponding module in 
+GRAB_SPIDER_CONFIG::global::spider_modules variable in project/settings.py
+
+
+Database
+========
+
+By default the project is configured to use MongoDB, to change mongodb
+connection settings and database name change MONGODB_CONNECTION and 
+MONGODB_NAME in the project/settings.py
+
+
+Support
+=======
+
+Grab website is http://grablib.org
+Grab repository: http://github.com/lorien/grab
+Repository of spider template project: http://github.com/lorien/spider_template

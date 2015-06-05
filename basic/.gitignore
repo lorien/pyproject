@@ -1,0 +1,13 @@
+# Common
+*.pyc
+*.pyo
+*.swp
+*.swo
+*.orig
+
+# Project specific
+/project/settings_local.py
+/.env
+pip-log.txt
+/var/
+/export/
