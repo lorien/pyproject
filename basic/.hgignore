@@ -16,3 +16,7 @@ syntax:regexp
 ^var/
 ^export/
 ^dump/
+
+# Grab development
+^grab$
+^weblib$
