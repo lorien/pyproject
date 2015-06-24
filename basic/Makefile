@@ -1,6 +1,6 @@
 .PHONY: build venv deps clean
 
-build: venv deps
+build: venv deps init
 
 venv:
 	virtualenv --no-site-packages --python=python3.4 .env
