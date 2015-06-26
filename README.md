@@ -1,7 +1,9 @@
 Spider project
 ==============
 
-To start new project based on this template do::
+To start new project based on this template do:
+
+.. code:: bash
 
     pip install runscript grab
     git clone http://github.com/lorien/spider_project ~/spider_project
@@ -11,5 +13,5 @@ To start new project based on this template do::
 Feedback
 ========
 
-Grab project: http://github.com/lorien/grab
-Email: lorien@lorien.name
+* Grab project: http://github.com/lorien/grab
+* Email: lorien@lorien.name
