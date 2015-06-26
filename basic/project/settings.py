@@ -3,6 +3,15 @@ GRAB_SPIDER_CONFIG = {
         'spider_modules': [
             'spider.{{ PROJECT_NAME }}',
         ],
+        #'cache': {
+        #    'backend': 'mongo',
+        #    'database': '{{ PROJECT_NAME }}_cache',
+        #},
+        #'proxy_list': {
+        #    'source': '/web/proxy.txt',
+        #    'source_type': 'text_file',
+        #},
+
     },
 }
 
