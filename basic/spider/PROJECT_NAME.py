@@ -1,5 +1,7 @@
 from grab.spider import Spider, Task
 from grab import Grab
+from grab.spider.decorators import integrity
+from weblib.error import DataNotValid
 
 from project.database import db
 
