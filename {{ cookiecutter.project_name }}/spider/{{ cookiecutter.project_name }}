@@ -6,6 +6,6 @@ from weblib.error import DataNotValid
 from project.database import db
 
 
-class {{ PROJECT_NAME_CAMELCASE }}Spider(Spider):
+class {{ cookiecutter.project_name.title().replace('_', '') }}Spider(Spider):
     def task_generator(self):
         pass

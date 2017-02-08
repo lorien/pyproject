@@ -1,11 +1,11 @@
 GRAB_SPIDER_CONFIG = {
     'global': {
         'spider_modules': [
-            'spider.{{ PROJECT_NAME }}',
+            'spider.{{ cookiecutter.project_name }}',
         ],
         #'cache': {
         #    'backend': 'mongo',
-        #    'database': '{{ PROJECT_NAME }}_cache',
+        #    'database': '{{ cookiecutter.project_name }}_cache',
         #},
         #'proxy_list': {
         #    'source': '/web/proxy.txt',
@@ -15,8 +15,10 @@ GRAB_SPIDER_CONFIG = {
     },
 }
 
-MONGODB_CONNECTION = {}
-MONGODB_NAME = '{{ PROJECT_NAME }}'
+MONGODB = {
+    'connection': {},
+    'dbname': '{{ cookiecutter.project_name }}',
+}
 
 try:
     from project.settings_local import *

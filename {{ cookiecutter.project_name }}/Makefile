@@ -3,7 +3,7 @@
 build: venv deps init
 
 venv:
-	virtualenv --no-site-packages --python=python3.4 .env
+	virtualenv --no-site-packages --python=python3 .env
 	
 deps:
 	.env/bin/pip install -r project/requirements.txt

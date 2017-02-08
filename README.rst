@@ -1,17 +1,19 @@
-Spider project
-==============
+============================
+Grab/Spider Project Template
+============================
 
-To start new project based on this template do:
+This is template of project of web-site scraping with Grab library.
+To start new project you need cookiecutter software:
 
 .. code:: bash
 
-    pip install runscript grab
-    git clone http://github.com/lorien/spider_project ~/spider_project
-    run start_project --template ~/spider_project/basic <project_name>
+    pip install cookiecutter
 
+Then run the command:
 
-Feedback
-========
+.. code:: bash
 
-* Grab project: http://github.com/lorien/grab
-* Email: lorien@lorien.name
+    cookiecutter gh:lorien/spider_project
+
+and specify values for asked keys. Note that value of "project_name" would be
+a name of root directory of your project.
