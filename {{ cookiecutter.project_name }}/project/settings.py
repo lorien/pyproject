@@ -4,7 +4,7 @@ GRAB_SPIDER_CONFIG = {
             'spider.{{ cookiecutter.project_name }}',
         ],
         #'cache': {
-        #    'backend': 'mongo',
+        #    'backend': 'mongodb',
         #    'database': '{{ cookiecutter.project_name }}_cache',
         #},
         #'proxy_list': {

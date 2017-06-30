@@ -1,3 +1,6 @@
+from pprint import pprint
+from urllib.parse import quote_plus, urlsplit, urljoin
+
 from grab.spider import Spider, Task
 from grab import Grab
 from grab.spider.decorators import integrity
