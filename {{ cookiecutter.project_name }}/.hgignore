@@ -16,10 +16,7 @@ syntax:regexp
 ^var/
 ^export/
 ^dump/
-^backup/
-^sql/schema.sql
-^sql/data/
-^sql/import/
+^Pipfile\.lock$
 
 # Grab development
 ^grab$

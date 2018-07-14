@@ -7,10 +7,10 @@ GRAB_SPIDER_CONFIG = {
         #    'backend': 'mongodb',
         #    'database': '{{ cookiecutter.project_name }}_cache',
         #},
-        #'proxy_list': {
+        'proxy_list': {
         #    'source': '/web/proxy.txt',
         #    'source_type': 'text_file',
-        #},
+        },
 
     },
 }

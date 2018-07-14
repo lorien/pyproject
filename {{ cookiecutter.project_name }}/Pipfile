@@ -1,0 +1,18 @@
+[[source]]
+url = "https://pypi.python.org/simple"
+verify_ssl = true
+
+
+[packages]
+runscript = "*"
+pymongo = "*"
+redis = "*"
+qr = "*"
+tldextract = "*"
+#grab = {git = "https://github.com/lorien/grab" }
+grab = {path = "/web/grab", editable = true}
+python-dateutil = "*"
+jsondate = "*"
+jsonschema = "*"
+jinja2 = "*"
+pytest = "*"
