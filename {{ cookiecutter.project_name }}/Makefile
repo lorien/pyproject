@@ -3,8 +3,8 @@
 build: venv init
 
 venv:
-	pipenv --three lock
-	pipenv --three sync
+	pipenv lock --three
+	pipenv sync --three
 	
 clean:
 	find -name '*.pyc' -delete
