@@ -1,11 +1,13 @@
-.PHONY: build venv clean
+.PHONY: build venv clean init
 
-build: venv init
+build: venv deps init
 
 venv:
-	pipenv lock --three
-	pipenv sync --three
-	
+	virtualenv -p python3.5 .env
+
+deps:
+	.env/bin/pip install -r requirements.txt
+
 clean:
 	find -name '*.pyc' -delete
 	find -name '*.swp' -delete
@@ -14,4 +16,3 @@ clean:
 init:
 	if [ ! -e var/run ]; then mkdir -p var/run; fi
 	if [ ! -e var/log ]; then mkdir -p var/log; fi
-	if [ ! -e export ]; then mkdir -p export; fi

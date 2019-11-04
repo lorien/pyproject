@@ -2,4 +2,10 @@ from pymongo import MongoClient
 
 from project.settings import MONGODB
 
-db = MongoClient(**MONGODB['connection'])[MONGODB['dbname']]
+
+def init_db():
+    conn = MongoClient(**MONGODB['connection'])
+    return conn[MONGODB['dbname']]
+
+
+db = init_db()
