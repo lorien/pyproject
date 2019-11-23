@@ -11,7 +11,7 @@ To create virtual environment and install all dependencies run::
 
     make build
 
-You can change dependencies in project/requirements.txt
+You can change dependencies in requirements.txt
 
 
 Database
