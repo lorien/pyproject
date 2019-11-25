@@ -1,4 +1,4 @@
-.PHONY: build venv clean init
+.PHONY: build venv deps clean init ioweb
 
 build: venv deps init
 
@@ -16,3 +16,9 @@ clean:
 init:
 	if [ ! -e var/run ]; then mkdir -p var/run; fi
 	if [ ! -e var/log ]; then mkdir -p var/log; fi
+
+ioweb:
+	mkdir src
+	ln -s /web/ioweb src
+	ln -s src/ioweb
+	.env/bin/pip install -e src/ioweb

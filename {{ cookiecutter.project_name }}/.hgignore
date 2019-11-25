@@ -12,3 +12,5 @@ syntax:regexp
 ^\.env/
 ^var/
 ^dump/
+^src/
+^ioweb$

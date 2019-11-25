@@ -9,3 +9,5 @@ pip-log.txt
 /.env
 /var/
 /dump/
+/src/
+/ioweb
