@@ -14,3 +14,4 @@ syntax:regexp
 ^dump/
 ^src/
 ^ioweb$
+^\.git/
