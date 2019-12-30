@@ -20,5 +20,5 @@ init:
 ioweb:
 	mkdir src
 	ln -s /web/ioweb src
-	ln -s src/ioweb
+	ln -s src/ioweb/ioweb
 	.env/bin/pip install -e src/ioweb
