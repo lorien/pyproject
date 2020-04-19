@@ -3,7 +3,7 @@
 build: venv deps init
 
 venv:
-	virtualenv -p python3.5 .env
+	virtualenv -p python3 .env
 
 deps:
 	.env/bin/pip install -r requirements.txt

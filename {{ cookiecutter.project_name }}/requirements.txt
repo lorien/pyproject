@@ -8,3 +8,4 @@ lxml
 pyopenssl
 python-dateutil
 pytest
+orjson
