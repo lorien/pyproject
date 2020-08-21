@@ -4,7 +4,7 @@
 *.swo
 *.orig
 
-/project/settings_local.py
+/web/settings_local.py
 pip-log.txt
 /.env
 /var/
@@ -12,3 +12,4 @@ pip-log.txt
 /src/
 /ioweb
 /.hg/
+/.pytest_cache/

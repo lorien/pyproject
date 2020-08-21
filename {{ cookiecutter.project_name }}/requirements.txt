@@ -9,3 +9,7 @@ pyopenssl
 python-dateutil
 pytest
 orjson
+pytype
+pylint
+flake8
+pyyaml

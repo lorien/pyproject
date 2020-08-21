@@ -1,11 +1,11 @@
 from pymongo import MongoClient
 
-from project.settings import MONGODB
+from project.config import config
 
 
 def init_db():
-    conn = MongoClient(**MONGODB['connection'])
-    return conn[MONGODB['dbname']]
+    conn = MongoClient(**config['mongodb']['connection'])
+    return conn[config['mongodb']['dbname']]
 
 
 db = init_db()

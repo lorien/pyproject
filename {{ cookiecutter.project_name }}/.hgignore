@@ -5,7 +5,7 @@ syntax:glob
 *.swo
 *.orig
 
-project/settings_local.py
+web/settings_local.py
 pip-log.txt
 
 syntax:regexp
@@ -15,3 +15,4 @@ syntax:regexp
 ^src/
 ^ioweb$
 ^\.git/
+^\.pytest_cache/

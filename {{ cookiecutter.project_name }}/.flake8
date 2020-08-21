@@ -1,0 +1,7 @@
+[flake8]
+# E265 block comment should start with '# '
+# E261 at least two spaces before inline comment
+# E121 continuation line under-indented for hanging indent
+# E125 continuation line with same indent as next logical line
+# F401 'pprint.pprint' imported but unused, CHECKED BY PYLINT
+ignore=E261,E265,E121,E125,F401

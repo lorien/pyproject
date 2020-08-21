@@ -18,7 +18,7 @@ init:
 	if [ ! -e var/log ]; then mkdir -p var/log; fi
 
 ioweb:
-	mkdir src
-	ln -s /web/ioweb src
-	ln -s src/ioweb/ioweb
+	mkdir -p src
+	if [ ! -e src/ioweb ]; then ln -s /web/ioweb src; fi
+	if [ ! -e ioweb ]; then ln -s src/ioweb/ioweb; fi;
 	.env/bin/pip install -e src/ioweb
