@@ -1,4 +1,4 @@
-urllib3==1.25.6
+urllib3==1.26.5
 runscript
 pymongo
 ujson
