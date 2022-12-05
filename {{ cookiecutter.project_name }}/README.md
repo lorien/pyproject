@@ -4,6 +4,7 @@ This project is created with cookiecutter using template located at https://gith
 
 To create another project from this template, run the command "cookiecutter gh:lorien/pyproject"
 
+
 ## Initial Project Setup
 
 To create virtual environment and install all dependencies run: `make bootstrap`
@@ -11,9 +12,17 @@ To create virtual environment and install all dependencies run: `make bootstrap`
 You can change dependencies in "requirements.txt" file
 
 
+# Type checking and linters
+
+Run command "make check" to run mypy, pylint, flake8 and bandit linters on your files. Do not forget
+to update FILES\_CHECK\_MYPY and FILES\_CHECK\_ALL in Makefile to include all packages and modules
+you want to check.
+
+
 ## Database
 
 By default the project is configured to use MongoDB. To change MongoDB connection settings update "var/config.yml" file.
+
 
 ## Scripts
 
