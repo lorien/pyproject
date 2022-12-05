@@ -1,11 +1,11 @@
 ## What is this
 
-This is default README from template I use to start almost any python project. You can get this template from https://github.com/lorien/spider\_project.
+This is default README from template I use to start almost any python project. You can get this template from https://github.com/lorien/pyproject
 
 
 ## Installation
 
-To create virtual environment and install all dependencies run: `make build`
+To create virtual environment and install all dependencies run: `make bootstrap`
 
 You can change dependencies in "requirements.txt" file
 

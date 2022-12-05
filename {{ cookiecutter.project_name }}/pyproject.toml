@@ -1,0 +1,56 @@
+[project]
+
+name = "{{ cookiecutter.project_name }}"
+version = "0.0.1"
+
+[project.optional-dependencies]
+test = ["pytest"]
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["{{ cookiecutter.project_name }}"]
+
+[tool.setuptools.package-data]
+"*" = ["py.typed"]
+
+[tool.isort]
+profile = "black"
+line_length = 88
+# skip_gitignore = true # throws errors in stderr when ".git" dir does not exist
+
+[tool.bandit]
+# B101 assert_used
+# B410 Using HtmlElement to parse untrusted XML data
+skips = ["B101", "B410"]
+
+#[[tool.mypy.overrides]]
+#module = "procstat"
+#ignore_missing_imports = true
+
+[tool.pylint.main]
+jobs=4
+disable="missing-docstring,broad-except,too-few-public-methods,consider-using-f-string,fixme"
+variable-rgx="[a-z_][a-z0-9_]{1,30}$"
+attr-rgx="[a-z_][a-z0-9_]{1,30}$"
+argument-rgx="[a-z_][a-z0-9_]{1,30}$"
+max-line-length=88
+max-args=9
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.tox]
+legacy_tox_ini = """
+[tox]
+envlist = py3
+isolated_build = True
+
+[testenv]
+commands =
+    pytest {posargs}
+deps =
+    -e .[test]
+"""
