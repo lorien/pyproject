@@ -5,6 +5,7 @@ build
 twine
 pyyaml
 pymongo
+runscript
 
 # Code Quality
 bandit[toml]

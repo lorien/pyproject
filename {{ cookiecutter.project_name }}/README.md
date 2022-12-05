@@ -1,9 +1,10 @@
-## What is this
+# Default Python Project Template README
 
-This is default README from template I use to start almost any python project. You can get this template from https://github.com/lorien/pyproject
+This project is created with cookiecutter using template located at https://github.com/lorien/pyproject
 
+To create another project from this template, run the command "cookiecutter gh:lorien/pyproject"
 
-## Installation
+## Initial Project Setup
 
 To create virtual environment and install all dependencies run: `make bootstrap`
 
@@ -12,19 +13,19 @@ You can change dependencies in "requirements.txt" file
 
 ## Database
 
-By default the project is configured to use MongoDB. To change MongoDB connection settings and database name change `MONGODB\_CONNECTION` and `MONGODB\_NAME` in the "project/settings\_local.py" file which is imported by
-"project/settings.py" file. File "project/settings\_local.py" must be excluded
-from repository using ignore file. DO NOT change "roject/settings.py"
-file.
-
+By default the project is configured to use MongoDB. To change MongoDB connection settings update "var/config.yml" file.
 
 ## Scripts
 
-Command line custom scripts are stored in "script/" directory and launched with `run`
-command which is provided by "runscript" package. So, if there is "script/foo.py"
-file the command `run foo` will run `main()` function from "script/foo.py" file.
+Command line scripts are stored in "script/" directory and can be launched with `run`
+command which is provided by "runscript" package.
+
+Example. You have "script/foo.py" file. If you run console command "run foo", the runscript
+framework will run `main()` function from "script/foo.py" file.
 
 
 ## Support
 
-Telegram chats: [grablab](https://t.me/grablab) (English) and [grablab\_ru](https://t.me/grablab_ru) (Russian)
+Telegram English chat: [grablab](https://t.me/grablab)
+
+Telegram Russian chat: [grablab\_ru](https://t.me/grablab_ru)
