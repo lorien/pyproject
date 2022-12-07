@@ -49,5 +49,5 @@ isolated_build = True
 commands =
     pytest {posargs}
 deps =
-    -e .[test]
+    -rrequirements.txt
 """
