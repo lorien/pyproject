@@ -33,7 +33,7 @@ Example. You have "script/foo.py" file. If you run console command "run foo", th
 framework will run `main()` function from "script/foo.py" file.
 
 
-## Support
+## Community
 
 Telegram English chat: [https://t.me/grablab](https://t.me/grablab)
 

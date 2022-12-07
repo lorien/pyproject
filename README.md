@@ -10,3 +10,10 @@ Usage:
 * Run command: `cookiecutter gh:lorien/pyproject` and provide answers
     for questions which cookiecutter will ask you. The value of "project\_name" will be
     used to create a new directory with project contents.
+
+
+## Community
+
+Telegram English chat: [https://t.me/grablab](https://t.me/grablab)
+
+Telegram Russian chat: [https://t.me/grablab\_ru](https://t.me/grablab_ru)
