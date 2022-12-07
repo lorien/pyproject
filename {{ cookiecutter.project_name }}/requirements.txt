@@ -6,6 +6,8 @@ twine
 pyyaml
 pymongo
 runscript
+coverage
+pytest-cov
 
 # Code Quality
 bandit[toml]

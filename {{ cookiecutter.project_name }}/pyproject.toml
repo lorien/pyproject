@@ -3,9 +3,6 @@
 name = "{{ cookiecutter.project_name }}"
 version = "0.0.1"
 
-[project.optional-dependencies]
-test = ["pytest"]
-
 [build-system]
 requires = ["setuptools"]
 build-backend = "setuptools.build_meta"

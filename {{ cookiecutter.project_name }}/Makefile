@@ -1,4 +1,4 @@
-.PHONY: bootstrap venv deps dirs clean test release check build
+.PHONY: bootstrap venv deps dirs clean test release check build coverage
 
 FILES_CHECK_MYPY = {{ cookiecutter.project_name }}
 FILES_CHECK_ALL = $(FILES_CHECK_MYPY) tests
@@ -45,3 +45,6 @@ build:
 	rm -rf dist/*
 	python -m build --sdist
 
+
+coverage:
+	pytest --cov {{ cookiecutter.project_name }} --cov-report term-missing
