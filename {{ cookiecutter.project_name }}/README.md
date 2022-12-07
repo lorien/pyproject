@@ -35,6 +35,6 @@ framework will run `main()` function from "script/foo.py" file.
 
 ## Support
 
-Telegram English chat: [grablab](https://t.me/grablab)
+Telegram English chat: [https://t.me/grablab](https://t.me/grablab)
 
-Telegram Russian chat: [grablab\_ru](https://t.me/grablab_ru)
+Telegram Russian chat: [https://t.me/grablab\_ru](https://t.me/grablab_ru)
