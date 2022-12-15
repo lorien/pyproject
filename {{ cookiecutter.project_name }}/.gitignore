@@ -13,3 +13,4 @@ pip-log.txt
 /ioweb
 /.hg/
 /.pytest_cache/
+/build/
