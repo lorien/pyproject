@@ -22,14 +22,15 @@ clean:
 	find -name '__pycache__' -delete
 
 test:
-	pytest
-
-#release:
-#	git push \
-#	&& git push --tags \
-#	&& make build \
-#	&& twine upload dist/*
-
+	pytest --cov {{ cookiecutter.project_name }} --cov-report term-missing
+	coverage lcov -o .coverage.lcov
+{% if cookiecutter.packaging %}
+release:
+	git push \
+	&& git push --tags \
+	&& make build \
+	&& twine upload dist/*
+{% endif %}
 mypy:
 	mypy --strict $(FILES_CHECK_MYPY)
 
