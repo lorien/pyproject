@@ -8,7 +8,7 @@ requires-python = ">=3.8"
 license = {"file" = "LICENSE"}
 keywords = []
 authors = [
-    {name = "{{ cookiecutter.author_name }}", email = ""}
+    {name = "{{ cookiecutter.author_name }}"{% if cookiecutter.author_email %}, email = "{{ cookiecutter.author_email }}"{% endif %}}
 ]
 # https://pypi.org/pypi?%3Aaction=list_classifiers
 classifiers = [

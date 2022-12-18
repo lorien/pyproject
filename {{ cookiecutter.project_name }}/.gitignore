@@ -16,3 +16,5 @@ pip-log.txt
 /build/
 /.coverage
 /.tox/
+*.egg-info
+/dist/

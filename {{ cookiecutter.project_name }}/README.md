@@ -1,5 +1,11 @@
 # Default Python Project Template README
-
+{% if cookiecutter.packaging == "yes" %}
+[![Test Status](https://github.com/lorien/{{ cookiecutter.project_name }}/actions/workflows/test.yml/badge.svg)](https://github.com/lorien/{{ cookiecutter.project_name }}/actions/workflows/test.yml)
+[![Code Quality](https://github.com/lorien/{{ cookiecutter.project_name }}/actions/workflows/check.yml/badge.svg)](https://github.com/lorien/{{ cookiecutter.project_name }}/actions/workflows/test.yml)
+[![Type Check](https://github.com/lorien/{{ cookiecutter.project_name }}/actions/workflows/mypy.yml/badge.svg)](https://github.com/lorien/{{ cookiecutter.project_name }}/actions/workflows/mypy.yml)
+[![Test Coverage Status](https://coveralls.io/repos/github/lorien/{{ cookiecutter.project_name }}/badge.svg)](https://coveralls.io/github/lorien/{{ cookiecutter.project_name }})
+[![Documentation Status](https://readthedocs.org/projects/{{ cookiecutter.project_name }}/badge/?version=latest)](http://user-agent.readthedocs.org)
+{% endif %}
 This project is created with cookiecutter using template located at https://github.com/lorien/pyproject
 
 To create another project from this template, run the command "cookiecutter gh:lorien/pyproject"
