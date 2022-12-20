@@ -3,7 +3,7 @@ name: Tests
 on: [push]
 
 jobs:
-  build:
+  test:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
@@ -34,7 +34,7 @@ jobs:
 #        github-token: ${{ secrets.github_token }}
 #        path-to-lcov: ./.coverage.lcov
 #        flag-name: run-${{ matrix.os }}-${{ matrix.python }}
-#        parallel: true 
+#        parallel: true
 #
 #  finish:
 #      needs: test

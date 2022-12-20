@@ -25,7 +25,9 @@ pytest:
 	pytest --cov {{ cookiecutter.project_name }} --cov-report term-missing
 
 test:
-	make check && make pytest
+	make check \
+	&& make pytest \
+	&& tox -e py38-check
 
 {% if cookiecutter.packaging %}
 release:
