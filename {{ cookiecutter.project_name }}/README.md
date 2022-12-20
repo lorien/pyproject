@@ -15,7 +15,7 @@ To create another project from this template, run the command "cookiecutter gh:l
 
 To create virtual environment and install all dependencies run: `make bootstrap`
 
-You can change dependencies in "requirements.txt" file
+You can change dependencies in "requirements\_dev.txt" file
 
 
 # Type checking and linters
