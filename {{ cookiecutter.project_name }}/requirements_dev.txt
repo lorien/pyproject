@@ -8,6 +8,7 @@ pymongo
 runscript
 coverage
 pytest-cov
+pytest-xdist
 
 # Code Quality
 bandit[toml]
