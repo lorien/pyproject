@@ -1,8 +1,22 @@
 # Python Project Template for Cookiecutter
 
-This is a template for [cookiecutter](https://github.com/cookiecutter/cookiecutter) to create a python project.
-Template includes basic configs to run pytest, mypy, pylint, flake8 and bandit linters.
-All tools' configurations except flake8 are stored in pyproject.toml. Flake8 can't use pyproject.toml yet.
+This is a template for [cookiecutter](https://github.com/cookiecutter/cookiecutter) to create
+starting set of files for a new python project.
+
+Features:
+
+- Makefile with "make" commands to run linters, tests and other utilities
+- Default configurations for all tools used in the template
+- Linters:
+    - flake8 and a number of flake8 plugins
+    - pylint
+    - bandit
+- Type checkers:
+    - mypy
+- Tests:
+    - pytest
+- Most of tool's configs are stored in pyproject.toml
+- Tools to build python package and upload it to pypi
 
 Usage:
 
