@@ -1,4 +1,4 @@
-.PHONY: bootstrap venv deps dirs clean pytest test release mypy pylint flake8 bandit check build coverage
+.PHONY: bootstrap venv deps dirs clean pytest test release mypy pylint flake8 bandit check build coverage eradicate
 
 FILES_CHECK_MYPY = {{ cookiecutter.project_name }}
 FILES_CHECK_ALL = $(FILES_CHECK_MYPY) tests
@@ -66,3 +66,6 @@ build:
 
 coverage:
 	pytest --cov {{ cookiecutter.project_name }} --cov-report term-missing
+
+eradicate:
+	tox -e eradicate -- flake8 -j auto --eradicate-whitelist-extend="" $(FILES_CHECK_ALL)
