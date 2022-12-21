@@ -4,7 +4,7 @@
 [![Code Quality](https://github.com/lorien/{{ cookiecutter.project_name }}/actions/workflows/check.yml/badge.svg)](https://github.com/lorien/{{ cookiecutter.project_name }}/actions/workflows/test.yml)
 [![Type Check](https://github.com/lorien/{{ cookiecutter.project_name }}/actions/workflows/mypy.yml/badge.svg)](https://github.com/lorien/{{ cookiecutter.project_name }}/actions/workflows/mypy.yml)
 [![Test Coverage Status](https://coveralls.io/repos/github/lorien/{{ cookiecutter.project_name }}/badge.svg)](https://coveralls.io/github/lorien/{{ cookiecutter.project_name }})
-[![Documentation Status](https://readthedocs.org/projects/{{ cookiecutter.project_name }}/badge/?version=latest)](http://user-agent.readthedocs.org)
+[![Documentation Status](https://readthedocs.org/projects/{{ cookiecutter.project_name }}/badge/?version=latest)](https://{{ cookiecutter.project_name }}.readthedocs.org)
 {% endif %}
 This project is created with cookiecutter using template located at https://github.com/lorien/pyproject
 
