@@ -13,7 +13,7 @@ To create another project from this template, run the command "cookiecutter gh:l
 
 ## Initial Project Setup
 
-To create virtual environment and install all dependencies run: `make bootstrap`
+To create virtual environment and install all dependencies run: `make init`
 
 You can change dependencies in "requirements\_dev.txt" file
 
