@@ -11,7 +11,7 @@ jobs:
         python: ['3.8', '3.9', '3.10', '3.11']
     steps:
 
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
 
     - name: Set up Python ${{ matrix.python }}
       uses: actions/setup-python@v4
@@ -35,25 +35,6 @@ jobs:
 #        path-to-lcov: ./.coverage.lcov
 #        flag-name: run-${{ matrix.os }}-${{ matrix.python }}
 #        parallel: true
-#
-#  finish:
-#      needs: test
-#      runs-on: ubuntu-latest
-#      steps:
-#      - name: Coveralls Finished
-#        uses: coverallsapp/github-action@master
-#        with:
-#          github-token: ${{ secrets.github_token }}
-#          path-to-lcov: ./.coverage.lcov
-#          parallel-finished: true
-
-#    - name: Coveralls Parallel
-#      uses: coverallsapp/github-action@master
-#      with:
-#        github-token: ${{ secrets.github_token }}
-#        path-to-lcov: ./.coverage.lcov
-#        flag-name: run-${{ matrix.os }}-${{ matrix.python }}
-#        parallel: true 
 #
 #  finish:
 #      needs: test

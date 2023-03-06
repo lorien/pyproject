@@ -8,7 +8,7 @@ Features:
 - Makefile with "make" commands to run linters, tests and other utilities
 - Default configurations for all tools used in the template
 - Linters:
-    - flake8 and a number of flake8 plugins
+    - ruff with almost all rules enabled
     - pylint
     - bandit
 - Type checkers:

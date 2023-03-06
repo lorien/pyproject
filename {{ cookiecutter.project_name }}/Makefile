@@ -1,14 +1,15 @@
-.PHONY: bootstrap venv deps dirs clean pytest test release mypy pylint flake8 bandit check build coverage eradicate
+.PHONY: init venv deps dirs clean pytest test release mypy pylint flake8 bandit ruff check build coverage eradicate
 
 FILES_CHECK_MYPY = {{ cookiecutter.project_name }}
 FILES_CHECK_ALL = $(FILES_CHECK_MYPY) tests
 
-bootstrap: venv deps dirs
+init: venv deps dirs
 
 venv:
 	virtualenv -p python3 .env
 
 deps:
+	.env/bin/pip install -U pip
 	.env/bin/pip install -r requirements_dev.txt
 	.env/bin/pip install -e .
 
@@ -43,20 +44,15 @@ pylint:
 	pylint -j0 $(FILES_CHECK_ALL)
 
 flake8:
-	flake8 -j auto --max-cognitive-complexity=17 $(FILES_CHECK_ALL)
+	flake8 -j auto --isolated --select CCR --max-cognitive-complexity=17 $(FILES_CHECK_ALL)
+
+ruff:
+	ruff $(FILES_CHECK_ALL)
 
 bandit:
 	bandit -qc pyproject.toml -r $(FILES_CHECK_ALL)
 
-check:
-	echo "mypy" \
-	&& make mypy \
-	&& echo "pylint" \
-	&& make pylint \
-	&& echo "flake8" \
-	&& make flake8 \
-	&& echo "bandit" \
-	&& make bandit
+check: mypy ruff pylint flake8 bandit
 
 build:
 	rm -rf *.egg-info
