@@ -3,6 +3,8 @@
     "author_name": "",
     "author_email": "",
     "packaging": ["no", "yes"],
+    "target_python_version": ["3.11", "3.10", "3.9", "3.8"],
+    "min_python_version": ["3.11", "3.10", "3.9", "3.8"],
     "_copy_without_render": [
         ".github/workflows/*.yml"
     ]

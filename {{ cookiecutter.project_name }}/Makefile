@@ -1,7 +1,10 @@
-.PHONY: init venv deps dirs clean pytest test release mypy pylint flake8 bandit ruff check build coverage eradicate
+.PHONY: init venv deps dirs clean pytest test release mypy pylint flake8 ruff bandit check build coverage eradicate
 
 FILES_CHECK_MYPY = {{ cookiecutter.project_name }}
 FILES_CHECK_ALL = $(FILES_CHECK_MYPY) tests
+MAX_COGNITIVE_COMPLEXITY = 12
+TARGET_PYTHON_VERSION = {{ cookiecutter.target_python_version }}
+COVERAGE_TARGET = {{ cookiecutter.project_name }}
 
 init: venv deps dirs
 
@@ -23,12 +26,10 @@ clean:
 	find -name '__pycache__' -delete
 
 pytest:
-	pytest --cov {{ cookiecutter.project_name }} --cov-report term-missing
+	pytest -n30 -x --cov $(COVERAGE_TARGET) --cov-report term-missing
 
-test:
-	make check \
-	&& make pytest \
-	&& tox -e py38-check
+test: check pytest
+	tox -e check-minver
 
 {% if cookiecutter.packaging %}
 release:
@@ -38,13 +39,13 @@ release:
 	&& twine upload dist/*
 {% endif %}
 mypy:
-	mypy --strict $(FILES_CHECK_MYPY)
+	mypy --python-version=$(TARGET_PYTHON_VERSION) --strict $(FILES_CHECK_MYPY)
 
 pylint:
 	pylint -j0 $(FILES_CHECK_ALL)
 
 flake8:
-	flake8 -j auto --isolated --select CCR --max-cognitive-complexity=17 $(FILES_CHECK_ALL)
+	flake8 -j auto --isolated --select CCR --max-cognitive-complexity=$(MAX_COGNITIVE_COMPLEXITY) $(FILES_CHECK_ALL)
 
 ruff:
 	ruff $(FILES_CHECK_ALL)
@@ -52,16 +53,15 @@ ruff:
 bandit:
 	bandit -qc pyproject.toml -r $(FILES_CHECK_ALL)
 
-check: mypy ruff pylint flake8 bandit
+check: ruff mypy pylint flake8 bandit
 
 build:
 	rm -rf *.egg-info
 	rm -rf dist/*
 	python -m build --sdist
 
-
 coverage:
-	pytest --cov {{ cookiecutter.project_name }} --cov-report term-missing
+	pytest -n30 -x --cov $(COVERAGE_TARGET) --cov-report term-missing
 
 eradicate:
 	tox -e eradicate -- flake8 -j auto --eradicate-whitelist-extend="" $(FILES_CHECK_ALL)

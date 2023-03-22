@@ -4,7 +4,7 @@ version = "0.0.1"
 {% if cookiecutter.packaging == "yes" %}
 description = ""
 readme = "README.md"
-requires-python = ">=3.8"
+requires-python = ">={{ cookiecutter.min_python_version }}"
 license = {"file" = "LICENSE"}
 keywords = []
 authors = [
@@ -114,5 +114,5 @@ ignore = [
     "UP032", # Use f-string instead of format call
     "ERA001", # Found commented-out code
 ]
-target-version = "py311"
+target-version = "py{{ cookiecutter.target_python_version|replace(".", "") }}"
 extend-exclude = ["var"]
