@@ -12,7 +12,7 @@ venv:
 	virtualenv -p python3 .env
 
 deps:
-	.env/bin/pip install -U pip
+	curl -sS https://bootstrap.pypa.io/get-pip.py | python3
 	.env/bin/pip install -r requirements_dev.txt
 	.env/bin/pip install -e .
 
