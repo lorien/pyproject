@@ -4,6 +4,7 @@ syntax:glob
 *.swp
 *.swo
 *.orig
+*.egg-info
 
 web/settings_local.py
 pip-log.txt
@@ -16,3 +17,5 @@ syntax:regexp
 ^ioweb$
 ^\.git/
 ^\.pytest_cache/
+^\.mypy_cache/
+^\.ruff_cache/
