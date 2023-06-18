@@ -1,6 +1,6 @@
 .PHONY: init venv deps dirs clean pytest test release mypy pylint flake8 ruff bandit check build coverage eradicate
 
-FILES_CHECK_MYPY = {{ cookiecutter.project_name }}
+FILES_CHECK_MYPY = {{ cookiecutter.project_name }} script
 FILES_CHECK_ALL = $(FILES_CHECK_MYPY) tests
 MAX_COGNITIVE_COMPLEXITY = 12
 TARGET_PYTHON_VERSION = {{ cookiecutter.target_python_version }}
