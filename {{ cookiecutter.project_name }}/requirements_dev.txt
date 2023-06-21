@@ -11,6 +11,9 @@ coverage
 pytest-cov
 pytest-xdist
 
+# types
+types-pyyaml
+
 # Code Quality
 ruff
 bandit[toml]
