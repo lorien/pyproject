@@ -16,3 +16,5 @@ syntax:regexp
 ^ioweb$
 ^\.git/
 ^\.pytest_cache/
+^\.ruff_cache/
+^\.mypy_cache/
