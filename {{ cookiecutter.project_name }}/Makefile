@@ -12,7 +12,7 @@ venv:
 deps:
 	.env/bin/pip install -U pip
 	.env/bin/pip install -r requirements_dev.txt
-	.env/bin/pip install -e .
+	{% if cookiecutter.packaging == "yes" %}.env/bin/pip install -e .{% endif %}
 
 dirs:
 	if [ ! -e var/run ]; then mkdir -p var/run; fi
@@ -29,7 +29,7 @@ pytest:
 test: check pytest
 	tox -e check-minver
 
-{% if cookiecutter.packaging %}
+{% if cookiecutter.packaging == "yes" %}
 release:
 	git push \
 	&& git push --tags \
