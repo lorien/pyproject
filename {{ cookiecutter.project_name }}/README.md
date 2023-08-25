@@ -20,7 +20,7 @@ You can change dependencies in "requirements\_dev.txt" file
 
 # Type checking and linters
 
-Run command "make check" to run mypy, pylint, ruff and bandit linters on your files. Do not forget
+Run command "make check" to run mypy, pylint, ruff and linters on your files. Do not forget
 to update FILES\_CHECK\_MYPY and FILES\_CHECK\_ALL in Makefile to include all packages and modules
 you want to check.
 

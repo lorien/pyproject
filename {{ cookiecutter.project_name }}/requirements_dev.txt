@@ -13,7 +13,6 @@ pytest-xdist
 
 # Code Quality
 ruff
-bandit[toml]
 flake8
 flake8-cognitive-complexity
 mypy

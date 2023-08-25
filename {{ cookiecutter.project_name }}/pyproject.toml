@@ -46,11 +46,6 @@ profile = "black"
 line_length = 88
 # skip_gitignore = true # throws errors in stderr when ".git" dir does not exist
 
-[tool.bandit]
-# B101 assert_used
-# B410 Using HtmlElement to parse untrusted XML data
-skips = ["B101", "B410"]
-
 #[[tool.mypy.overrides]]
 #module = "procstat"
 #ignore_missing_imports = true

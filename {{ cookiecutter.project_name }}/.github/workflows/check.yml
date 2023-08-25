@@ -25,4 +25,4 @@ jobs:
 
     - name: Run tests
       run: |
-        make pylint && make flake8 && make bandit
+        make ruff && make pylint && make bandit

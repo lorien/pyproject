@@ -1,4 +1,4 @@
-.PHONY: init venv deps dirs clean pytest test release mypy pylint flake8 ruff bandit check build coverage eradicate
+.PHONY: init venv deps dirs clean pytest test release mypy pylint flake8 ruff check build coverage eradicate
 
 FILES_CHECK_MYPY = {{ cookiecutter.project_name }}
 FILES_CHECK_ALL = $(FILES_CHECK_MYPY) tests
@@ -50,10 +50,7 @@ flake8:
 ruff:
 	ruff $(FILES_CHECK_ALL)
 
-bandit:
-	bandit -qc pyproject.toml -r $(FILES_CHECK_ALL)
-
-check: ruff mypy pylint flake8 bandit
+check: ruff mypy pylint
 
 build:
 	rm -rf *.egg-info
