@@ -14,7 +14,6 @@ pytest-xdist
 # Code Quality
 ruff
 flake8
-flake8-cognitive-complexity
 mypy
 pep8-naming
 pylint

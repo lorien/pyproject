@@ -1,9 +1,7 @@
 .PHONY: init venv deps dirs clean pytest test release mypy pylint flake8 ruff check build coverage eradicate
 
-FILES_CHECK_MYPY = {{ cookiecutter.project_name }}
-FILES_CHECK_ALL = $(FILES_CHECK_MYPY) tests
-MAX_COGNITIVE_COMPLEXITY = 12
-TARGET_PYTHON_VERSION = {{ cookiecutter.target_python_version }}
+FILES_CHECK_MYPY = {{ cookiecutter.project_name }} tests script
+FILES_CHECK_ALL = $(FILES_CHECK_MYPY)
 COVERAGE_TARGET = {{ cookiecutter.project_name }}
 
 init: venv deps dirs
@@ -39,13 +37,10 @@ release:
 	&& twine upload dist/*
 {% endif %}
 mypy:
-	mypy --python-version=$(TARGET_PYTHON_VERSION) --strict $(FILES_CHECK_MYPY)
+	mypy --strict $(FILES_CHECK_MYPY)
 
 pylint:
 	pylint -j0 $(FILES_CHECK_ALL)
-
-flake8:
-	flake8 -j auto --isolated --select CCR --max-cognitive-complexity=$(MAX_COGNITIVE_COMPLEXITY) $(FILES_CHECK_ALL)
 
 ruff:
 	ruff $(FILES_CHECK_ALL)
