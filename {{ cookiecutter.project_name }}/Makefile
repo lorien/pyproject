@@ -10,7 +10,8 @@ venv:
 	virtualenv -p python3 .env
 
 deps:
-	.env/bin/pip install -U pip
+	curl -sS https://bootstrap.pypa.io/get-pip.py | python3 # a fix for manually built python
+	pip install -U setuptools # a fix for manually built python
 	.env/bin/pip install -r requirements_dev.txt
 	{% if cookiecutter.packaging == "yes" %}.env/bin/pip install -e .{% endif %}
 

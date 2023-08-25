@@ -15,6 +15,9 @@ rich
 # types
 types-pyyaml
 
+# types
+types-pyyaml
+
 # Code Quality
 ruff
 flake8
