@@ -53,7 +53,7 @@ line_length = 88
 [tool.pylint.main]
 jobs=4
 extension-pkg-whitelist="lxml"
-disable="missing-docstring,broad-except,too-few-public-methods,consider-using-f-string,fixme"
+disable="missing-docstring,broad-except,too-few-public-methods,consider-using-f-string,fixme,no-member"
 variable-rgx="[a-z_][a-z0-9_]{1,30}$"
 attr-rgx="[a-z_][a-z0-9_]{1,30}$"
 argument-rgx="[a-z_][a-z0-9_]{1,30}$"
@@ -108,6 +108,17 @@ ignore = [
     "TRY003", # Avoid specifying long messages outside the exception class
     "UP032", # Use f-string instead of format call
     "ERA001", # Found commented-out code
+    "RUF001", # String contains ambiguous unicode character
+    "ANN102", # Missing type annotation for `cls` in classmethod
+    "TD002", # Missing author in TODO
+    "TD003", # Missing issue link on the line following this TODO
+    "FIX002", # Line contains TODO
+    "RUF003", # Comment contains ambiguous
+    "RUF012", # Mutable class attributes should be annotated
+    "TRY400", #  Use `logging.exception` instead of `logging.error`
+    "PERF401", # Use a list comprehension to create a transformed list
+    "RUF100", # [*] Unused `noqa` directive
 ]
+pylint.max-args=9
 target-version = "py{{ cookiecutter.target_python_version|replace(".", "") }}"
 extend-exclude = ["var"]
