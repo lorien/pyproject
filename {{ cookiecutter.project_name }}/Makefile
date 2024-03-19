@@ -3,15 +3,16 @@
 FILES_CHECK_MYPY = {{ cookiecutter.project_name }} tests script
 FILES_CHECK_ALL = $(FILES_CHECK_MYPY)
 COVERAGE_TARGET = {{ cookiecutter.project_name }}
+.DEFAULT_GOAL := check
 
 init: venv deps dirs
 
 venv:
-	virtualenv -p python3 .env
+	virtualenv -p python{{ cookiecutter.target_python_version }} .env
 
 deps:
-	curl -sS https://bootstrap.pypa.io/get-pip.py | python3 # a fix for manually built python
-	pip install -U setuptools # a fix for manually built python
+	curl -sS https://bootstrap.pypa.io/get-pip.py | .env/bin/python3 # a fix for manually built python
+	.env/bin/python -m pip install -U setuptools wheel # a fix for manually built python
 	.env/bin/pip install -r requirements_dev.txt
 	{% if cookiecutter.packaging == "yes" %}.env/bin/pip install -e .{% endif %}
 
