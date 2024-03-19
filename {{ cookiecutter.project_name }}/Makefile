@@ -45,7 +45,7 @@ pylint:
 	pylint -j0 $(FILES_CHECK_ALL)
 
 ruff:
-	ruff $(FILES_CHECK_ALL)
+	ruff check $(FILES_CHECK_ALL)
 
 check: ruff mypy pylint
 

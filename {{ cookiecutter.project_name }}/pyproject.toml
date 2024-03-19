@@ -79,8 +79,8 @@ load-plugins=[
 testpaths = ["tests"]
 
 [tool.ruff]
-select = ["ALL"]
-ignore = [
+lint.select = ["ALL"]
+lint.ignore = [
     "A003", # Class attribute `type` is shadowing a python builtin
     "ANN101", # Missing type annotation for `self` in method
     "ANN401", # Dynamically typed expressions (typing.Any) are disallowed
@@ -119,6 +119,6 @@ ignore = [
     "PERF401", # Use a list comprehension to create a transformed list
     "RUF100", # [*] Unused `noqa` directive
 ]
-pylint.max-args=9
+lint.pylint.max-args=9
 target-version = "py{{ cookiecutter.target_python_version|replace(".", "") }}"
 extend-exclude = ["var"]
