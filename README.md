@@ -10,7 +10,6 @@ Features:
 - Linters:
     - ruff with almost all rules enabled
     - pylint
-    - bandit
 - Type checkers:
     - mypy
 - Tests:
