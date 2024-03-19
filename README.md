@@ -1,9 +1,9 @@
 # Python Project Template for Cookiecutter
 
-This is a template for [cookiecutter](https://github.com/cookiecutter/cookiecutter) to create
-starting set of files for a new python project.
+This is a [cookiecutter](https://github.com/cookiecutter/cookiecutter) template I use to start
+new python project.
 
-Features:
+Features of this template:
 
 - Makefile with "make" commands to run linters, tests and other utilities
 - Default configurations for all tools used in the template
@@ -11,10 +11,10 @@ Features:
     - ruff with almost all rules enabled
     - pylint
 - Type checkers:
-    - mypy
+    - mypy in strict mode
 - Tests:
     - pytest
-- Most of tool's configs are stored in pyproject.toml
+- Tool's configurations are stored in pyproject.toml
 - Tools to build python package and upload it to pypi
 
 Usage:
