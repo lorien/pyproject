@@ -1,11 +1,12 @@
 # Python Project Template for Cookiecutter
 
-This is a [cookiecutter](https://github.com/cookiecutter/cookiecutter) template I use to start
+This is a [cookiecutter](https://github.com/cookiecutter/cookiecutter) template I use to start a
 new python project.
 
-Features of this template:
+## Template features
 
-- Makefile with "make" commands to run linters, tests and other utilities
+- Makefile for "make" utility to run linters, tests and other things
+- Tools to build virtual environment and install project requirements
 - Default configurations for all tools used in the template
 - Linters:
     - ruff with almost all rules enabled
@@ -17,7 +18,7 @@ Features of this template:
 - Tool's configurations are stored in pyproject.toml
 - Tools to build python package and upload it to pypi
 
-Usage:
+## Usage
 
 * Install cookiecutter: `pip install cookiecutter`
 * Run command: `cookiecutter gh:lorien/pyproject` and provide answers
@@ -25,7 +26,7 @@ Usage:
     used to create a new directory with project contents.
 
 
-## Community
+## Feedback
 
 Telegram English chat: [https://t.me/grablab](https://t.me/grablab)
 
