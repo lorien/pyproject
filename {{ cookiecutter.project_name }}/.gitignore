@@ -6,7 +6,7 @@
 
 /web/settings_local.py
 pip-log.txt
-/.env
+/.venv
 /var/
 /dump/
 /src/

@@ -10,7 +10,7 @@ web/settings_local.py
 pip-log.txt
 
 syntax:regexp
-^\.env/
+^\.venv/
 ^var/
 ^dump/
 ^src/

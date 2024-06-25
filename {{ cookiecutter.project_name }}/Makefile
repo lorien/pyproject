@@ -1,20 +1,26 @@
 .PHONY: init venv deps dirs clean pytest test release mypy pylint flake8 ruff check build coverage eradicate
 
-FILES_CHECK_MYPY = {{ cookiecutter.project_name }} tests script
-FILES_CHECK_ALL = $(FILES_CHECK_MYPY)
-COVERAGE_TARGET = {{ cookiecutter.project_name }}
 .DEFAULT_GOAL := check
+FILES_CHECK_MYPY := {{ cookiecutter.project_name }} tests script
+FILES_CHECK_ALL := $(FILES_CHECK_MYPY)
+COVERAGE_TARGET := {{ cookiecutter.project_name }}
+PYTHON_VER := {{ cookiecutter.target_python_version }}
 
 init: venv deps dirs
 
 venv:
-	virtualenv -p python{{ cookiecutter.target_python_version }} .env
+	if which $(PYTHON_VER); then \
+		PYTHON_BINARY=$(PYTHON_VER); \
+	else \
+		PYTHON_BINARY=var/bin/$(PYTHON_VER); \
+	fi; \
+	uv venv --python $$PYTHON_BINARY .venv
 
 deps:
-	curl -sS https://bootstrap.pypa.io/get-pip.py | .env/bin/python3 # a fix for manually built python
-	.env/bin/python -m pip install -U setuptools wheel # a fix for manually built python
-	.env/bin/pip install -r requirements_dev.txt
-	{% if cookiecutter.packaging == "yes" %}.env/bin/pip install -e .{% endif %}
+	#curl -sS https://bootstrap.pypa.io/get-pip.py | .env/bin/python3 # a fix for manually built python
+	uv pip install -U setuptools wheel
+	uv pip install -r requirements_dev.txt
+	{% if cookiecutter.packaging == "yes" %}uv pip install -e .{% endif %}
 
 dirs:
 	if [ ! -e var/run ]; then mkdir -p var/run; fi
