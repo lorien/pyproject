@@ -1,4 +1,4 @@
-.PHONY: init venv deps dirs clean pytest test release mypy pylint flake8 ruff check build coverage eradicate
+.PHONY: init venv deps dirs clean pytest test release mypy pylint ruff check build coverage
 
 .DEFAULT_GOAL := check
 FILES_CHECK_MYPY := {{ cookiecutter.project_name }} tests script
@@ -62,6 +62,3 @@ build:
 
 coverage:
 	pytest -n30 -x --cov $(COVERAGE_TARGET) --cov-report term-missing
-
-eradicate:
-	tox -e eradicate -- flake8 -j auto --eradicate-whitelist-extend="" $(FILES_CHECK_ALL)

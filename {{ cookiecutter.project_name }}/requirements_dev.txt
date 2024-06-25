@@ -11,18 +11,13 @@ coverage
 pytest-cov
 pytest-xdist
 rich
-
-# types
-types-pyyaml
+msgspec
 
 # types
 types-pyyaml
 
 # Code Quality
 ruff
-flake8
 mypy
-pep8-naming
 pylint
-msgspec
 black
