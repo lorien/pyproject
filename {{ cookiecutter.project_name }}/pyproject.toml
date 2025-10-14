@@ -98,7 +98,6 @@ load-plugins=[
 lint.select = ["ALL"]
 lint.ignore = [
     "A003", # Class attribute `type` is shadowing a python builtin
-    "ANN101", # Missing type annotation for `self` in method
     "ANN401", # Dynamically typed expressions (typing.Any) are disallowed
     "BLE001", # Do not catch blind exception: `Exception`
     "COM812", # Trailing comma missing
@@ -125,7 +124,6 @@ lint.ignore = [
     "UP032", # Use f-string instead of format call
     "ERA001", # Found commented-out code
     "RUF001", # String contains ambiguous unicode character
-    "ANN102", # Missing type annotation for `cls` in classmethod
     "TD002", # Missing author in TODO
     "TD003", # Missing issue link on the line following this TODO
     "FIX002", # Line contains TODO
