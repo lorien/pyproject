@@ -14,13 +14,13 @@ venv:
 	else \
 		PYTHON_BINARY=var/bin/$(PYTHON_VER); \
 	fi; \
-	uv venv --python $$PYTHON_BINARY .venv
+	virtualenv --python $$PYTHON_BINARY .venv
 
 deps:
 	#curl -sS https://bootstrap.pypa.io/get-pip.py | .env/bin/python3 # a fix for manually built python
-	uv pip install -U setuptools wheel
-	uv pip install -r requirements_dev.txt
-	{% if cookiecutter.packaging == "yes" %}uv pip install -e .{% endif %}
+	.venv/bin/pip install -U setuptools wheel
+	.venv/bin/pip install -r requirements_dev.txt
+	{% if cookiecutter.packaging == "yes" %}.venv/bin/pip install -e .{% endif %}
 
 dirs:
 	if [ ! -e var/run ]; then mkdir -p var/run; fi
