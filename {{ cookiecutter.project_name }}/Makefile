@@ -1,4 +1,4 @@
-.PHONY: init venv deps dirs clean pytest test release mypy pylint ruff check build coverage
+.PHONY: init venv deps dirs clean pytest coverage test {% if cookiecutter.packaging == "yes" %}release {% endif %}mypy pylint ruff check build
 
 .DEFAULT_GOAL := check
 FILES_CHECK_MYPY := {{ cookiecutter.project_name }} tests script
@@ -34,6 +34,9 @@ clean:
 pytest:
 	pytest -n30 -x --cov $(COVERAGE_TARGET) --cov-report term-missing
 
+coverage:
+	pytest -n30 -x --cov $(COVERAGE_TARGET) --cov-report term-missing
+
 test: check pytest
 	tox -e check-minver
 
@@ -59,6 +62,3 @@ build:
 	rm -rf *.egg-info
 	rm -rf dist/*
 	python -m build --sdist
-
-coverage:
-	pytest -n30 -x --cov $(COVERAGE_TARGET) --cov-report term-missing
