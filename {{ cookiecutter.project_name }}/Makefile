@@ -9,10 +9,10 @@ PYTHON_VER := {{ cookiecutter.target_python_version }}
 init: venv deps dirs
 
 venv:
-	if which $(PYTHON_VER); then \
-		PYTHON_BINARY=$(PYTHON_VER); \
+	if which python$(PYTHON_VER); then \
+		PYTHON_BINARY=python$(PYTHON_VER); \
 	else \
-		PYTHON_BINARY=var/bin/$(PYTHON_VER); \
+		PYTHON_BINARY=var/bin/python$(PYTHON_VER); \
 	fi; \
 	virtualenv --python $$PYTHON_BINARY .venv
 
