@@ -12,12 +12,16 @@ pytest-cov
 pytest-xdist
 rich
 msgspec
+gunicorn
+inotify
+multidict
+urllib3[socks]
 
 # types
 types-pyyaml
 
 # Code Quality
 ruff
-mypy
+mypy[faster-cache]>=1.12
 pylint
 black
