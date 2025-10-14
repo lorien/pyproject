@@ -12,7 +12,7 @@ venv:
 	if which python$(PYTHON_VER); then \
 		PYTHON_BINARY=python$(PYTHON_VER); \
 	else \
-		PYTHON_BINARY=var/bin/python$(PYTHON_VER); \
+		PYTHON_BINARY=$$(pyenv prefix $(PYTHON_VER) | tail -1)/bin/python$(PYTHON_VER); \
 	fi; \
 	virtualenv --python $$PYTHON_BINARY .venv
 
