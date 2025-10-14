@@ -94,9 +94,6 @@ load-plugins=[
 ]
 
 
-[tool.pytest.ini_options]
-testpaths = ["tests"]
-
 [tool.ruff]
 lint.select = ["ALL"]
 lint.ignore = [
@@ -141,3 +138,9 @@ lint.ignore = [
 lint.pylint.max-args=9
 target-version = "py{{ cookiecutter.target_python_version|replace(".", "") }}"
 extend-exclude = ["var"]
+
+[tool.pytest.ini_options]
+norecursedirs = ["*"] # guarantees it will not auto-detect anything
+testpaths = [
+    "tests",
+]
