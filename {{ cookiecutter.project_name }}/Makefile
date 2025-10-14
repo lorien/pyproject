@@ -49,7 +49,7 @@ release:
 	&& twine upload dist/*
 {% endif %}
 mypy:
-	mypy --strict $(FILES_CHECK_MYPY)
+	mypy --strict $(FILES_CHECK_MYPY) --enable-error-code exhaustive-match
 
 pylint:
 	pylint -j0 $(FILES_CHECK_ALL)
