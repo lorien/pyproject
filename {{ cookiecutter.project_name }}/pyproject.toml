@@ -56,7 +56,25 @@ line_length = 88
 [tool.pylint.main]
 jobs=4
 extension-pkg-whitelist="lxml"
-disable="missing-docstring,broad-except,too-few-public-methods,consider-using-f-string,fixme,no-member"
+# R0911 -- handled by ruff
+# R0912 -- handled by ruff
+# R0915 -- handled by ruff
+# R0917 -- handled by ruff
+# R0204 -- redefined-variable-type -- handled by ruff
+
+# --- PY27 COMPAT BEGINS
+# wrong-import-order -- pylint things that six.moves imports are standard library imports
+# unused-import -- pylint does not see usage of import things in type comments
+# bad-continuation -- pylibt does not like attributes block formatted with type comments
+# relative-import -- have no idea
+# import-error -- some problems with six library
+# no-name-in-module -- some problems with six library
+# ungrouped-imports -- multiple lines for typing imports
+# bad-option-value -- py27 pylint is too old for some options from more new codebase,
+#   want to save this option for future
+# disable=wrong-import-order,unused-import,bad-continuation,no-self-use,relative-import,import-error,no-name-in-module,ungrouped-imports,bad-option-value
+# --- PY27 COMPAT ENDS
+disable="no-member,missing-docstring,broad-except,too-few-public-methods,consider-using-f-string,fixme,isinstance-second-argument-not-valid-type,R0911,R0912,R0915,R0917,R0204"
 variable-rgx="[a-z_][a-z0-9_]{1,30}$"
 attr-rgx="[a-z_][a-z0-9_]{1,30}$"
 argument-rgx="[a-z_][a-z0-9_]{1,30}$"
