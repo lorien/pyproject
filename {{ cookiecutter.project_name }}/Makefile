@@ -25,6 +25,7 @@ deps:
 dirs:
 	if [ ! -e var/run ]; then mkdir -p var/run; fi
 	if [ ! -e var/log ]; then mkdir -p var/log; fi
+	if [ ! -e var/bin ]; then mkdir -p var/bin; fi
 
 clean:
 	find -name '*.pyc' -delete
