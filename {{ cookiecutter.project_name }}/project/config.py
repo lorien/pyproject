@@ -1,13 +1,18 @@
-from typing import Any
+from typing import Any, TypedDict
 
 import yaml
 
-CACHE: dict[str, Any] = {}
+
+class Cache(TypedDict, total=False):
+    config: dict[str, Any]
+
+
+CACHE: Cache = {}
 
 
 def get_config() -> dict[str, Any]:
     if "config" not in CACHE:
-        with open("var/config.yml") as inp:
+        with open("var/config.yml", encoding="utf-8") as inp:
             config = yaml.safe_load(inp)
         CACHE["config"] = config
     return CACHE["config"]
