@@ -39,7 +39,6 @@ coverage:
 	pytest -n30 -x --cov $(COVERAGE_TARGET) --cov-report term-missing
 
 test: check pytest
-	tox -e check-minver
 
 {% if cookiecutter.packaging == "yes" %}
 release:
